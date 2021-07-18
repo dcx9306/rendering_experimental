@@ -26,7 +26,11 @@ export default class Renderer {
     // this.scene.add(this.box);
     this.renderer.setAnimationLoop(() => {
       this.instancedEdges.update();
+      const t1 = performance.now();
       this.renderer.render(this.scene, this.camera);
+      this.renderer.getContext().finish();
+      const t2 = performance.now();
+      console.log(`render takes ${t2 - t1} ms`);
       this.store.rendererInfo.update(this.renderer.info);
     });
   }
