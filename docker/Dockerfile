@@ -7,6 +7,7 @@ RUN apt-get update
 COPY installers /tmp/installers
 
 RUN /tmp/installers/install_general.sh
+RUN /tmp/installers/install_rust.sh
 # RUN /tmp/installers/install_bazel.sh
 
 RUN rm -rf /tmp/*

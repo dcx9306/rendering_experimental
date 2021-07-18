@@ -20,5 +20,3 @@ else
     echo $CONTAINER_NAME
     exit 1
 fi
-
-docker exec -it $CONTAINER_NAME /bin/bash
